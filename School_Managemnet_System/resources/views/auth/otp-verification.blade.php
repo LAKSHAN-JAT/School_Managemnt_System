@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<body>
-<head>
- 
-@extends('layouts/app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -12,9 +8,19 @@
                 <div class="card-header">{{ __('OTP Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('otp.generate')}}">
-                        @csrf
+                    @if (session('success'))
+                    <div class="alert alert-success" role="alert"> {{session('success')}} 
+                    </div>
+                    @endif
 
+                    @if (session('error'))
+                    <div class="alert alert-danger" role="alert"> {{session('error')}} 
+                    </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('otp.getlogin') }}">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{$user_id}}" />
                         <div class="row mb-3">
                             <label for="mobile_no" class="col-md-4 col-form-label text-md-end">{{ __('OTP') }}</label>
 
@@ -29,17 +35,13 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                @if (Route::has('login'))
-                                    <a class="btn btn-link" href="{{ route('login') }}">
-                                        {{ __('Login with Username') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
@@ -49,5 +51,3 @@
     </div>
 </div>
 @endsection
-</body>
-</html>
