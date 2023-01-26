@@ -13,12 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        @if(Session::has('error'))
-                    <div class="alert alert-success" role="alert">
-                            {{ session('error') }}
-                        </div>
-                        @endif
-                        welcome to user dashboard
+                    welcome to user dashboard
                     {{ __('You are logged in!') }}
                 </div>
             </div>
