@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthOtpController;
+use App\Http\Controllers\studentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,6 @@ Route::controller(AuthOtpController::class)->group(function(){
     Route::get('/otp/verification/{user_id}', 'verification')->name('otp.verification');
     Route::post('/otp/login', 'loginWithOtp')->name('otp.getlogin');
 });
+//export pfd
+Route::get('/exportpdf', [studentController::class, 'exportpdf']) ->name('exportpdf');
+Route::resource('/studentinfo', studentController::class);
