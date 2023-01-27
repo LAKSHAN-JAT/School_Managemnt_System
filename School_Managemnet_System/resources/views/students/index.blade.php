@@ -221,10 +221,10 @@
                                         <th>Name</th>
                                         <th>Address</th>
                                         <th>Gender</th> 
-                                        <th><center>NIC</center></th>
+                                        <th style="text-align: center;">NIC</th>
                                         <th>Mobile</th> 
                                         <th>Image</th> 
-                                        <th><center>Action</center></th> 
+                                        <th style="text-align: center;">Action</th> 
                                 </thead>
                                 </thead>
                                 <tbody>
