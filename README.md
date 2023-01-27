@@ -9,6 +9,7 @@ This is a simple laravel project. There are few core functions in this system.
 ### 4. Delete student information
 ### 5  Search student information one by one
 ### 6. Generate student information report(.pdf)
+### 7. Login with OTP and Registration(Multi users)(user & Admin)
 
 #### Technologies used - HTML, Bootstrap , JavaScript , php , mySql- Laravel framework
  
